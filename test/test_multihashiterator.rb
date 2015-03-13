@@ -143,4 +143,15 @@ class TestMultiHashIterator < Minitest::Test
   end
 
 
+  def test_direct_access
+    h1 = { name: "John", last: "Travolta" }
+    h2 = { name: "Harrison", last: "Ford" }
+    h3 = { name: "Jane", last: "Fonda" }
+    h4 = { a: "Jane", last: 10.3 }
+    mh = MultiHash.new(h1, h2, h3, h4)
+    assert_equal ["John", "Harrison", "Jane", nil], mh[:name]
+    assert_equal ["Travolta", "Ford", "Fonda", 10.3], mh[:last]
+  end
+
+
 end

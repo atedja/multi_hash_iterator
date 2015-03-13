@@ -37,6 +37,11 @@ class MultiHash
     end
   end
 
+
+  def [] key
+    @memo[key] ||= @hashes.collect { |h| h[key] }
+  end
+
 end
 
 
