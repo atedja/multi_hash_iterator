@@ -22,3 +22,8 @@ will be used. See Example.
       # 2nd iteration: k = c, v = [11, nil, 10]
       # 3rd iteration: k = b, v = [nil, 2, nil]
     end
+
+Or direct access
+
+    mh = MultiHash.new(h1, h2, h3)
+    mh[:c]  # => [11, nil, 10]
