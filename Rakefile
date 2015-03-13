@@ -10,5 +10,5 @@ end
 
 desc "Build the gemfile"
 task :build do
-  `gem build multihashiterator.gemspec`
+  `gem build multi_hash_iterator.gemspec`
 end
