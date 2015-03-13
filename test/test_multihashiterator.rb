@@ -28,7 +28,7 @@ class TestMultiHashIterator < Minitest::Test
   end
 
 
-  def test_basic
+  def test_basic_multiple_iteration
     h1 = { a: 1, b: 2, c: 3 }
     h2 = { a: 2, b: 3 }
     h3 = { b: 4, d: 6 }
