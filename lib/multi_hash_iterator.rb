@@ -6,6 +6,7 @@ class MultiHash
 
   def initialize *hashes
     @hashes = hashes
+    @memo = {}
   end
 
   # Enumerate for each key.
@@ -14,11 +15,15 @@ class MultiHash
   def each
     return enum_for(:each) unless block_given?
 
-    final_hash = {}
+    # iterate through the memo first
+    @memo.each do |k, v|
+      yield k, v
+    end
+
     count = @hashes.length
     count.times do |i|
       @hashes[i].each do |key, v|
-        next if final_hash[key]
+        next if @memo[key]
 
         values = [].fill(nil, 0, i)
         values << v
@@ -27,7 +32,7 @@ class MultiHash
         end
 
         yield key, values if block_given?
-        final_hash[key] = values
+        @memo[key] = values
       end
     end
   end

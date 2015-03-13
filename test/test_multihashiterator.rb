@@ -81,6 +81,10 @@ class TestMultiHashIterator < Minitest::Test
     assert_equal Enumerator, e.class
     assert_equal [:a, [1, 2, nil]], e.next
     assert_equal [:b, [2, 3, 4]], e.next
+
+    e = mh.each
+    assert_equal [:a, [1, 2, nil]], e.next
+    assert_equal [:b, [2, 3, 4]], e.next
   end
 
 
