@@ -28,6 +28,25 @@ class TestMultiHashIterator < Minitest::Test
   end
 
 
+  def test_basic
+    h1 = { a: 1, b: 2, c: 3 }
+    h2 = { a: 2, b: 3 }
+    h3 = { b: 4, d: 6 }
+    mh = MultiHash.new(h1, h2, h3)
+
+    iteration = 0
+    mh.each do |k, v|
+      iteration += 1
+    end
+
+    mh.each do |k, v|
+      iteration += 1
+    end
+
+    assert_equal 8, iteration
+  end
+
+
   def test_compound_values
     h1 = { a: 1, b: 2, c: [100, 200] }
     h2 = { a: 2, b: "foo" }

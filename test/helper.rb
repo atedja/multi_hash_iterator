@@ -1,4 +1,4 @@
-require './lib/multi-hash-iterator.rb'
+require './lib/multi_hash_iterator.rb'
 
 require 'minitest/autorun'
 require 'minitest/unit'
