@@ -2,7 +2,7 @@ require './lib/multi_hash_iterator'
 
 Gem::Specification.new do |s|
   s.name = "multi_hash_iterator"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
   s.authors = ["Albert Tedja"]
   s.email = "nicho_tedja@yahoo.com"
   s.homepage = "https://github.com/atedja/multi_hash_iterator"
